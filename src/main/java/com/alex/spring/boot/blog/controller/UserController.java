@@ -94,6 +94,5 @@ public class UserController {
         model.addAttribute("title", "修改用户");
         return new ModelAndView("users/form", "userModel", model);
     }
-
 }
 
