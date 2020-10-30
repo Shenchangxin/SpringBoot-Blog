@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
  * Media Type 控制器.
 
  */
-@RestController
-public class MediaTypeController {
-
-    /**
-     * 根据客户端请求的 Content-Type，响应相应的 UserVO 类型.
-     */
-    @RequestMapping("/user")
-    public User getUser() {
-        return new User();
-    }
-
-}
+//@RestController
+//public class MediaTypeController {
+//
+//    /**
+//     * 根据客户端请求的 Content-Type，响应相应的 UserVO 类型.
+//     */
+//    @RequestMapping("/user")
+//    public User getUser() {
+//        return new User(null,null,null,null);
+//    }
+//
+//}

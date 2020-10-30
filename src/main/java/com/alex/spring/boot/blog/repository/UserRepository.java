@@ -2,37 +2,26 @@ package com.alex.spring.boot.blog.repository;
 
 
 import com.alex.spring.boot.blog.domain.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 
 /**
  * 用户仓库.
  */
-public interface UserRepository {
-    /**
-     * 新增或者修改用户
-     */
-    User saveOrUpateUser(User user);
+public interface UserRepository extends JpaRepository<User,Long> {
+
 
     /**
-     * 删除用户
-     *
-     * @param id
+     * 根据用户姓名进行分页查询用户列表
      */
-    void deleteUser(Long id);
+    Page<User> findByNameLike(String name, Pageable pageable);
 
     /**
-     * 根据用户id获取用户
-     *
-     * @param id
-     * @return
+     * 根据用户账号查询用户
      */
-    User getUserById(Long id);
+    User findByUsername(String username);
 
-    /**
-     * 获取所有用户的列表
-     *
-     * @return
-     */
-    List<User> listUser();
+
 }
